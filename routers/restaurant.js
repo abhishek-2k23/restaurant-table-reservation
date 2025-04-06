@@ -6,7 +6,7 @@ import fetchRestaurantData from "../controllers/Restaurant/fetchRestaurantData.j
 const router = express.Router();
 
 // Add new restaurant
-router.post('/add', restaurantValidator, addRestaurant);
+router.post('/create', restaurantValidator, addRestaurant);
 router.get('/fetchRestaurantData', fetchRestaurantData);
 
 export default router; 
