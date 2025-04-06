@@ -48,7 +48,7 @@ const login = async (req, res) => {
 
             // Set cookie options
             const cookieOptions = {
-                expires: new Date(Date.now() + 24 * 60 * 60 * 1000), // 24 hours
+                expires: new Date(Date.now() + 2 * 60 * 60 * 1000), // 24 hours
                 httpOnly: true,
                 secure: process.env.NODE_ENV === 'production', // Use secure in production
                 sameSite: 'strict' // Prevent CSRF attacks
