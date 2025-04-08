@@ -3,10 +3,10 @@
 A secure and scalable RESTful API backend built with **Node.js**, **Express.js**, and **MongoDB** that enables users to register, browse restaurants, book tables, view reservations, and receive email notifications.
 
 ---
-Deployed on Render
+### Deployed on Render
 
-#live url : https://reserve-table-l13s.onrender.com/api/
-#API test url (postman) : https://documenter.getpostman.com/view/26866425/2sB2cX7LW6
+live url : [https://reserve-table-l13s.onrender.com/api/]
+API test url (postman) : [https://documenter.getpostman.com/view/26866425/2sB2cX7LW6]
 ---
 
 ## 🚀 Features
