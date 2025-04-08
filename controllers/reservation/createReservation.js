@@ -176,9 +176,6 @@ const createReservation = async (req, res) => {
     // Save reservation
     const savedReservation = await newReservation.save()
 
-    // Send notifications
-    await sendReservationNotifications(savedReservation, user, restaurant)
-
     return res.status(201).json({
       success: true,
       message: "Reservation created successfully",

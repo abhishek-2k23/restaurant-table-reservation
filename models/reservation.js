@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { sendReservationNotifications } from "../services/notifications/notificationService.js";
 
 const reservationSchema = new mongoose.Schema({
     restaurantId: {
@@ -66,6 +67,24 @@ reservationSchema.virtual('duration').get(function() {
     const end = new Date(`1970-01-01T${this.endTime}`);
     return (end - start) / (1000 * 60);
 });
+
+//send notification before saving
+reservationSchema.pre('save', async function(next){
+    if(this.isNew){
+        try{
+            await this.populate([{path: 'userId', select: 'email'}, {path: 'restaurantId', select: 'contact name location'}]);
+            const notificationSent = await sendReservationNotifications(this, this.userId, this.restaurantId);
+             
+            if(notificationSent){
+                this.notificationSent.confirmation = true;
+            };
+        }catch(error){
+            console.log('Error in sending notification : ', error);
+        }
+    
+    }
+    next();
+})
 
 const Reservation = mongoose.model('Reservation', reservationSchema);
 
