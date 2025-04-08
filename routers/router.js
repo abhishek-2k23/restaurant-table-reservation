@@ -14,15 +14,14 @@ import cancelReservation from "../controllers/reservation/cancelReservation.js";
 
 //restaurant
 import fetchRestaurantData from "../controllers/Restaurant/fetchRestaurantData.js";
-import addRestaurant from "../controllers/restaurant/addRestaurant.js";
-
+import addRestaurant from "../controllers/Restaurant/addRestaurant.js"
 // User routes
 router.post('/register-user', register);
 router.post('/login-user', login);
 
 // Restaurant routes
 router.get('/restaurant', fetchRestaurantData);
-router.post('/addRestaurant', reservationValidator,addRestaurant)
+router.post('/addRestaurant', reservationValidator, addRestaurant)
 
 // Reservation routes
 router.post('/reserve', userAuthentication, reservationValidator, createReservation);
