@@ -46,10 +46,6 @@ const reservationSchema = new mongoose.Schema({
         confirmation: {
             type: Boolean,
             default: false
-        },
-        reminder: {
-            type: Boolean,
-            default: false
         }
     }
 }, {

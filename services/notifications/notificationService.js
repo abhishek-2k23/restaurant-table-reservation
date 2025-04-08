@@ -1,5 +1,4 @@
 import { sendReservationEmail, getRestaurantNotificationTemplate, getUserNotificationTemplate } from './emailService.js';
-import { sendReservationSMS, getUserSMSTemplate, getRestaurantSMSTemplate } from './smsService.js';
 
 export const sendReservationNotifications = async (reservation, user, restaurant) => {
     try {

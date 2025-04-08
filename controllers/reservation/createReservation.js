@@ -90,26 +90,17 @@ const createReservation = async (req, res) => {
       })
     }
 
-    //validate max and min booking time
-    const [startHour, startMinute] = startTime.split(":")
-    const [endHour, endMinute] = endTime.split(":")
+    //validate max and min booking time using virtual reservation
+    const tempReservataion = new Reservation({startTime, endTime});
+    const bookingDuration  = tempReservataion.duration;
 
-    const totalStartMinute = startHour * 60 + startMinute
-    const totalendMinute = endHour * 60 + endMinute
-
-    if (totalendMinute < totalStartMinute) {
-      totalendMinute += 24 * 60
-    }
-
-    const totalBookingMinutes = totalendMinute - totalStartMinute
-
-    if (totalBookingMinutes < restaurant.minimumBookingTime) {
+    if (bookingDuration < restaurant.minimumBookingTime) {
       return res.status(400).json({
         success: false,
         message: `minimum booking time is ${restaurant.minimumBookingTime} min`,
       })
     }
-    if (totalBookingMinutes > restaurant.maximumBookingTime) {
+    if (bookingDuration > restaurant.maximumBookingTime) {
       return res.status(400).json({
         success: false,
         message: `maximum booking time is ${restaurant.maximumBookingTime} min`,
@@ -185,7 +176,7 @@ const createReservation = async (req, res) => {
     console.error("Error in createReservation:", error)
     return res.status(500).json({
       success: false,
-      message: "Internal server error",
+      message: "Internal server error while creating reservation",
       error: process.env.NODE_ENV === "development" ? error.message : undefined,
     })
   }
