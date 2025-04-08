@@ -5,8 +5,7 @@ A secure and scalable RESTful API backend built with **Node.js**, **Express.js**
 ---
 ### Deployed on Render
 
-live url : [https://reserve-table-l13s.onrender.com/api/]
-API test url (postman) : [https://documenter.getpostman.com/view/26866425/2sB2cX7LW6]
+- live url : [https://reserve-table-l13s.onrender.com/api/]
 ---
 
 ## 🚀 Features
