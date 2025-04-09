@@ -5,7 +5,7 @@ A secure and scalable RESTful API backend built with **Node.js**, **Express.js**
 ---
 ### Deployed on Render
 
-- live url : [https://reserve-table-l13s.onrender.com/api/]
+- live url : https://reserve-table-l13s.onrender.com/api/
 ---
 
 ## 🚀 Features
@@ -75,7 +75,7 @@ A secure and scalable RESTful API backend built with **Node.js**, **Express.js**
 
 All APIs are documented and testable via Postman.
 
-📬 **[https://documenter.getpostman.com/view/26866425/2sB2cX7LW6]
+📬 https://documenter.getpostman.com/view/26866425/2sB2cX7LW6
 
 ---
 
@@ -96,8 +96,6 @@ All APIs are documented and testable via Postman.
 git clone https://github.com/abhishek-2k23/restaurant-table-reservation
 cd restaurant-table-reservation
 npm install
-
-# Add your environment variables in a `.env` file
 
 npm start
 
